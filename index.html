@@ -4,61 +4,248 @@
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <!-- <meta name="viewport" content="width=1230, user-scalable=yes">  -->
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link rel="stylesheet" type="text/css" href="./common.css">
+    <link rel="stylesheet" type="text/css" href="./style/common.css">
     <link rel="stylesheet" type="text/css" href="./style/font.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.0.2/css/swiper.min.css">
-    <script src="https://cdn.bootcss.com/Swiper/4.0.2/js/swiper.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <!-- <script src="swiper.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
     <title>飞网 - 让您的应用FEI起来</title>
     <style>
+
+    </style>
+    <style>
+      /** 轮播 */
       .slide1 {
-        background: url(./assets/banner-cdn.png) right center;
+        background: url(./assets/banner-cdn.png) top;
       }
       .slide2 {
-        background: url(./assets/banner-pack.png) left center;
+        background: url(./assets/banner-pack.png) -213px top;
+      }
+      .slide3 {
+        background: url(./assets/banner-sign.png) center;
+      }
+      .slide1 .slide-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
       }
       .slide-box {
         width: 40%;
+        border: 1px solid transparent;
+      }
+      .slide3 .slide-box {
+        margin-left: 150px;
       }
       .slide-right {
         display: flex;
         justify-content: flex-end;
       }
+      .swiper-module  {
+        height: 500px;
+        overflow: hidden;
+      }
+      .swiper-inner {
+        height: 500px;
+      }
+      .swiper-module h2 {
+
+        margin-top: 13%;
+        margin-bottom: 50px;
+        font-size: 30px;
+        line-height: 42px;
+        color: #393939;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+      .swiper-module p {
+        width: auto;
+        color: #393939;
+        line-height: 24px;
+        font-size: 14px;
+      }
+      .swiper-module span {
+        margin-top: 7px;
+        color: #999;
+        line-height: 16px;
+        font-size: 12px;
+      }
+      .slide-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .btn-box {
+        margin-top: 35px;
+      }
+      .btn {
+        margin-right: 13px;
+      }
+      .swiper-module {
+        border-bottom: 1px solid #e8e8e8;
+      }
+    </style>
+    <style>
+      /** 产品更新 */
+      .update-module h3 {
+        padding-top: 60px;
+        text-align: center;
+        color: #393939;
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .update-module >p {
+        padding-top: 15px;
+        color: #999;
+        font-size: 14px;
+        text-align: center;
+      }
+      .update-menu {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        margin-bottom: 30px;
+      }
+      .update-menu .active {
+        display: none;
+      }
+      .update-menu li {
+        display: flex;
+        flex-direction: column;
+        width: 120px;
+        height: 120px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .update-menu li.active-menu {
+        box-shadow: 0 0 20px 2px #e8e8e8;
+        transition: 0.3s;
+        color: #0063ff;
+      }
+      .update-menu li.active-menu .active {
+        display: block;
+      }
+      .update-menu li.active-menu .default {
+        display: none;
+      }
+      .update-menu li:hover {
+        box-shadow: 0 0 20px 2px #e8e8e8;
+        transition: 0.3s;
+        color: #0063ff;
+      }
+      .update-menu li img {
+        margin-bottom: 10px;
+      }
+      .inner-swiper {
+        height: 220px;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      .inner-swiper{
+        flex: 1;
+      }
+      .inner-swiper .swiper-slide {
+        padding: 40px;
+        box-sizing: border-box;
+      }
+      .inner-swiper h4 {
+        color: #0063ff;
+        font-weight: 400;;
+      }
+      .inner-swiper p {
+        margin-top: 20px;
+        line-height: 25px;
+        color: #393939;
+        font-size: 14px;
+      }
+      .inner-swiper .btn-box {
+        margin-top: 35px;
+      }
+      .update-slide {
+        display: flex;
+        border: 1px solid #e8e8e8;
+      }
+      .update-slide ul {
+        border-right: 1px solid #e8e8e8;
+        width: 10%;
+        max-width: 170px;
+        padding: 30px 0;
+
+      }
+      .update-slide .swiper-menu li.active {
+        color: #fff;
+        background: #2d8cf0;
+      }
+      .update-slide ul li {
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 35px;
+        padding: 0 30px;
+        color: #999;
+        transition: color .1s linear,background-color .1s linear,border .2s linear,box-shadow .2s linear;
+       }
+       .swiper-menu li {
+        cursor: pointer;
+       }
+    </style>
+    <style>
+
     </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but iview-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <header id="header" class="module">
-      <div>
-        <div class="logo"><img src="./assets/logo.svg"></div>
-        <ul class="menu">
-          <li><a href="" title="首页">首页</a></li>
-          <li><a href="" title="分发">分发</a></li>
-          <li><a href="" title="封装">封装</a></li>
-          <li><a href="" title="企业签名">企业签名</a></li>
-          <li><a href="" title="文档">文档</a></li>
-          <li><a href="" title="工具">工具</a></li>
-        </ul>
-      </div>
-      <div class="right">
-        <div>
-          <i class="iconfont icon-gift"></i>
-          注册有礼
+    <header id="header" class="module header-module">
+      <div class="module-inner">
+        <div class="header-left">
+          <div class="logo"><img src="./assets/logo.svg"></div>
+          <ul class="menu">
+            <li><a href="" title="首页" class="active">首页</a></li>
+            <li><a href="" title="分发">分发</a></li>
+            <li><a href="" title="封装">封装</a></li>
+            <li><a href="" title="企业签名">企业签名</a></li>
+            <li><a href="" title="文档">文档</a></li>
+            <li><a href="" title="工具">工具</a></li>
+          </ul>
         </div>
-        <div>
-          登录
+        <div class="right">
+          <a class="btn">
+            <i class="iconfont icon-gift"></i>
+            注册有礼
+          </a>
+          <a class="btn btn-blue">
+            登录
+          </a>
         </div>
       </div>
+
     </header>
-    <section class="module">
-      <div class="swiper-container">
+    <section class="swiper-module">
+      <div class="swiper-container" id="bannerSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="slide1 slide-left">
+            <div class="slide1 swiper-inner slide-left">
+              <div class="slide-inner">
+                <div class="slide-box">
+                  <h2>APP应用分发 全部采用CDN加速 让用户无需等待。</h2>
+                  <p>不惜成本,拒绝使用BGP线路而降低成本，全部使用CDN加速，1000+节点，让用户能极速完成安装您的APP。</p>
+                  <span>At any cost, refuse to use BGP line and reduce costs, all using CDN acceleration, 1000 + nodes, so that users can complete the installation of your app at a very fast speed.</span>
+                  <div class="btn-box">
+                    <a class="btn btn-blue" href="">详细介绍</a>
+                    <a class="btn btn-white" href="">即刻使用</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide2 swiper-inner slide-inner slide-right">
               <div class="slide-box">
                 <h2>APP应用分发 全部采用CDN加速 让用户无需等待。</h2>
                 <p>不惜成本,拒绝使用BGP线路而降低成本，全部使用CDN加速，1000+节点，让用户能极速完成安装您的APP。</p>
@@ -69,7 +256,9 @@
                 </div>
               </div>
             </div>
-            <div class="slide2 slide-right">
+          </div>
+          <div class="swiper-slide">
+            <div class="slide3 swiper-inner slide-inner slide-left">
               <div class="slide-box">
                 <h2>APP应用分发 全部采用CDN加速 让用户无需等待。</h2>
                 <p>不惜成本,拒绝使用BGP线路而降低成本，全部使用CDN加速，1000+节点，让用户能极速完成安装您的APP。</p>
@@ -82,11 +271,342 @@
             </div>
           </div>
         </div>
+         <div class="swiper-pagination" id="bannerPage"></div>
+         <!-- <div class="swiper-scrollbar"></div> -->
       </div>
-      <div>
-
-      </div>
-      <h3></h3>
     </section>
+    <section class="module update-module swiper-no-swiping module-inner">
+      <h3>持续不断的产品更新</h3>
+      <p>层企业级产品研发，不断丰富产品内容，为用户提供更精彩的云服务</p>
+      <ul class="update-menu" id="updateMenu">
+        <li class="active-menu">
+          <img class="active" src="./assets/cdn-pd.svg" alt="">
+          <img class="default" src="./assets/cdn.svg" alt="">
+          <label> 分发</label>
+        </li>
+        <li>
+          <img class="active" src="./assets/pack-pd.svg" alt="">
+          <img class="default" src="./assets/pack.svg" alt="">
+          <label>封装</label>
+        </li>
+        <li>
+          <img class="active" src="./assets/sign-pd.svg" alt="">
+          <img class="default" src="./assets/sign.svg" alt="">
+          <label>签名</label>
+        </li>
+        <li>
+          <img class="active" src="./assets/member-pd.svg" alt="">
+          <img class="default" src="./assets/member.svg" alt="">
+          <label>会员</label>
+        </li>
+        <li>
+          <img class="active" src="./assets/agent-pd.svg" alt="">
+          <img class="default" src="./assets/agent.svg" alt="">
+          <label>代理</label>
+        </li>
+      </ul>
+
+      <div class="swiper-container" id="updateSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide ">
+            <div class="slide-inner update-slide">
+              <ul class="swiper-menu" swiper="fenfa">
+                <li class="active">数据统计</li>
+                <li>双端合并</li>
+                <li>流量计费</li>
+                <li>自选储存</li>
+                <li>外网调用</li>
+              </ul>
+              <div class="swiper-container inner-swiper" id="fenfaSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h4>数据统计</h4>
+                    <p>每个APP都可以实时查看下载次数，浏览次数，以及下载明细，精准定位客户群。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>双端合并</h4>
+                    <p>安卓端、ios端2个地址合并一个地址，自动判断用户客户端类型。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>流量计费</h4>
+                    <p>告别传统按次付费，流量计费更合理，用多少算多少，无时间限制。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>自选储存</h4>
+                    <p>可以集成到您的官网，拥有不同的风格，使品牌更容易被客户信任。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <h4>外网调用</h4>
+                    <p>可以集成到您的官网，拥有不同的风格，使品牌更容易被客户信任。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide ">
+            <div class="slide-inner update-slide">
+              <ul class="swiper-menu" swiper="pack">
+                <li class="active">传统封装</li>
+                <li>ios扫码</li>
+                <li>app商店</li>
+              </ul>
+              <div class="swiper-container inner-swiper" id="packSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h4>传统封装</h4>
+                    <p>强大都API功能，让每个用户都APP都变得独一无二。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>IOS扫码</h4>
+                    <p>告别传统束缚，仅需扫码即可安装您的APP，无需证书，下载及信任。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>APP商店</h4>
+                    <p>制作即上传，无需审核，直接上传APP Store以及各大安卓市场。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide ">
+            <div class="slide-inner update-slide">
+              <ul class="swiper-menu" swiper="sign">
+                <li  class="active">共享证书</li>
+                <li>独立证书</li>
+                <li>独享证书</li>
+              </ul>
+              <div class="swiper-container inner-swiper" id="signSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h4>共享证书</h4>
+                    <p>非本公司自有证书，市场少部分人持有，对APP类型无要求，易被帐号持有者吊销或官方注销。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>独立证书</h4>
+                    <p>自有证书，对稳定性较高的用户比较合适，对APP类型也有些许要求，本公司持有帐号，稳定性佳。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>独享证书</h4>
+                    <p>自有证书，严格把控每一个签名的APP，违规业务一律不签，保证客户稳定，本公司持有帐号。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide ">
+            <div class="slide-inner update-slide">
+              <ul class="swiper-menu" swiper="member">
+                <li  class="active">去除广告</li>
+                <li>绿色通道</li>
+                <li>折扣优惠</li>
+                <li>其他服务</li>
+              </ul>
+              <div class="swiper-container inner-swiper" id="memberSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h4>去除广告</h4>
+                    <p>去除一切广告页面，让用户体验度更好。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>绿色通道</h4>
+                    <p>腾讯显示绿色通道，让用户信任度更好。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>折扣优惠</h4>
+                    <p>所有产品购买均有折扣，让您以最少的费用享受最优质的服务。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>其他服务</h4>
+                    <p>更多的服务正在逐渐开发中，尽情期待。。。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide ">
+            <div class="slide-inner update-slide">
+              <ul class="swiper-menu" swiper="agent">
+                <li  class="active">推广返现</li>
+                <li>超级代理</li>
+              </ul>
+              <div class="swiper-container inner-swiper" id="agentSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h4>推广返现</h4>
+                    <p>所有客户通过自身的推广链接所邀请的用户消费，均可享受返点，实时到账可消费或提现。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>超级代理</h4>
+                    <p>享受超高的返点的同时除独享签名，所有签名均可无限制签名，可设定签名时间，不收取任何费用。</p>
+                    <div class="btn-box">
+                      <a class="btn btn-blue">使用服务</a>
+                      <a class="btn">详情介绍</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="module">
+      <div class="module-inner footer-inner">
+        <div>
+          <img height="46" src="./assets/logo.svg">
+          <p class="bak"><span>© 2019 Fei.Cn</span><span>苏ICP备18049713号-1</span><span>用户服务协议</span></p>
+          <div>
+            <p class="cpn-info"><span>盐城畅付网络科技有限公司</span><span>Tel：<a href="tel:0515-8888-8786">0515-8888-8786</a></span><span>举报邮箱：GG@fei.cn</span></p>
+
+          </div>
+        </div>
+        <div class="footer-right">
+          <ol>
+            <li><h4>关于我们</h4></li>
+            <li><a href="" title="">关于我们</a></li>
+            <li><a href="" title="">联系我们</a></li>
+          </ol>
+          <ol>
+            <li><h4>诚邀合作</h4></li>
+            <li><a href="" title="">加入我们</a></li>
+          </ol>
+          <ol>
+            <li><h4>快速入口</h4></li>
+            <li><a href="" title="">控制台</a></li>
+            <li><a href="" title="">文档中心</a></li>
+            <li><a href="" title="">注册会员</a></li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var mySwiper = new Swiper('#bannerSwiper', {
+        // autoplay: true,
+        speed: 400,
+
+        // scrollbar: {
+        //   el: '#bannerSwipe#'
+        // },
+        pagination: {
+          el: '#bannerPage',
+          clickable: true,
+        },
+        spaceBetween: 100
+      })
+      var updateSwiper = new Swiper('#updateSwiper')
+
+      var fenfaSwiper = new Swiper('#fenfaSwiper', {
+        noSwiping : true,
+        direction: 'vertical'
+      })
+      var packSwiper = new Swiper('#packSwiper', {
+        noSwiping : true,
+        direction: 'vertical'
+      })
+      var signSwiper = new Swiper('#signSwiper', {
+        noSwiping : true,
+        direction: 'vertical'
+      })
+      var memberSwiper = new Swiper('#memberSwiper', {
+        noSwiping : true,
+        direction: 'vertical'
+      })
+      var agentSwiper = new Swiper('#agentSwiper', {
+        noSwiping : true,
+        direction: 'vertical'
+      })
+      var swiperMap = {
+        fenfa: fenfaSwiper,
+        pack: packSwiper,
+        sign: signSwiper,
+        member: memberSwiper,
+        agent: agentSwiper
+      }
+      $('.swiper-menu >li').click(function () {
+        let str = $(this).parent().attr('swiper')
+        let idx = $(this).index()
+        $(this).parent().find('.active').removeClass('active')
+        $(this).addClass('active')
+        swiperMap[str].slideTo(idx)
+      })
+      $('#updateMenu >li').click(function () {
+        let idx = $(this).index()
+        updateSwiper.slideTo(idx)
+        $('#updateMenu li.active-menu').removeClass('active-menu')
+        $(this).addClass('active-menu')
+        console.log(this)
+        console.log(arguments)
+      })
+    </script>
   </body>
 </html>
