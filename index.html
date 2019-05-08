@@ -618,6 +618,7 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src=./js/common.js></script>
     <script>
     $(document).ready(function () {
       var mySwiper = new Swiper('#bannerSwiper', {
@@ -676,14 +677,6 @@
         $(this).addClass('active-menu')
         console.log(this)
         console.log(arguments)
-      })
-      $('#more').click(function () {
-        let status = $('#headerMenu').hasClass('open-menu')
-        if (status) {
-          $('#headerMenu').removeClass('open-menu')
-        } else {
-          $('#headerMenu').addClass('open-menu')
-        }
       })
     })
 
