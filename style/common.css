@@ -202,7 +202,6 @@ footer.module {
   display: inline-block;
   vertical-align: middle;
   font-family: Bahnschrift;
-  font-size: 16px;
   color: #393939;
 }
 .cpn-info span {
@@ -228,14 +227,15 @@ footer.module {
 
   }
   .prd-list.pc-open-prd {
-    height: 200px;
+    height: 230px;
+    overflow: auto;
   }
   .prd-list-inner {
     background: #fff;
     width: 500px;
     display: flex;
     justify-content: space-between;
-    box-shadow: 1px 3px 6px #ccc;
+    box-shadow: 1px 3px 6px #efefef;
     padding: 30px;
   }
   .prd-list ul {
@@ -348,7 +348,6 @@ footer.module {
     margin-top: 12px;
   }
   .cpn-info a {
-    font-size: 14px;
   }
   .prd-list {
     position: fixed;
@@ -401,5 +400,10 @@ footer.module {
   }
   .prd-list.open-prd {
     right: 0;
+  }
+  .bak span {
+    margin-right: 8px;
+    padding-right: 8px;
+    font-size: 10px;
   }
 }

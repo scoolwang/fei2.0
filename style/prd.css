@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 .captain {
-  min-width: 200px;
+  width: 200px;
   margin-right: 50px;
   padding-right: 10px;
 }
@@ -40,12 +40,12 @@
   background: #4758ee;
   display: inline-block;
 }*/
-h2 {
+.captain h2 {
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 15px;
 }
-h3 {
+.captain-content h3 {
   font-size: 30px;
   font-weight: 400;
   padding-left: 30px;
@@ -61,6 +61,7 @@ h3 {
 }
 .desc p {
   color: #999;
+  line-height: 25px;
 }
 .inner {
   border-left: 1px solid #ececec;
@@ -200,7 +201,7 @@ h3 {
     background: #fff;
     box-shadow: 1px 2px 6px #ececec;
     padding-left: 30px;
-    width: 150px;
+    width: 200px;
     box-sizing: border-box;
   }
   .capton-menu {
@@ -209,10 +210,10 @@ h3 {
   .open-captain {
     left: 0;
   }
-  h2 {
+  .captain h2 {
     font-size: 20px;
   }
-  h3 {
+  .captain-content h3 {
     font-size: 20px;
   }
   .article {
