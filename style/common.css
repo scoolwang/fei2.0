@@ -181,6 +181,17 @@ footer.module {
   color: #999;
   font-size: 14px;
   margin-bottom: 15px;
+  display: flex;
+}
+
+.bak span {
+  border-right: 1px solid #ccc;
+  margin-right: 10px;
+  padding-right: 10px;
+  line-height: 12px;
+}
+.bak span:last-child {
+  border: none;
 }
 .cpn-info {
   color: #393939;

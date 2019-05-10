@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=750"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
-    <link rel="stylesheet" type="text/css" href="./style/common.css">
+
     <link rel="stylesheet" type="text/css" href="./style/font.css">
+    <link rel="stylesheet" type="text/css" href="./style/common.css">
+    <link rel="stylesheet" type="text/css" href="./style/prd.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css">
     <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
     <script
@@ -14,290 +16,13 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     <title>飞网 - 让您的应用FEI起来</title>
-    <style>
-      .article-wrap {
-        display: flex;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 5%;
-      }
-      .article {
-        color: #393939;
-        font-size: 14px;
-        font-family: Microsoft YaHei UI;
-        overflow: hidden;
-      }
-      .captain {
-        min-width: 200px;
-        margin-right: 50px;
-        padding-right: 10px;
-      }
-      .captain, .article {
-        padding-top: 70px;
-      }
-      .captain ul {
-        display: inline-block;
-      }
-      .captain ul a {
-        color: #999;
-        line-height: 31px;
-      }
-      .captain ul li {
-        margin-bottom: 5px;
-        padding: 5px 0;
-        line-height: 35px;
-        border-bottom: 1px solid transparent;
-        position: relative;
-      }
-      /*.captain li:after {
-        content: '',
-        width: 100px;
-        height: 2px;
-        background: #4758ee;
-        display: inline-block;
-      }*/
-      h2 {
-        font-size: 30px;
-        font-weight: 400;
-        margin-bottom: 15px;
-      }
-      h3 {
-        font-size: 30px;
-        font-weight: 400;
-        padding-left: 30px;
-        margin-bottom: 40px;
-      }
-      .desc {
-        padding-bottom: 20px;
-        border-bottom: 1px dashed #ececec;
-        margin-bottom: 30px;
-        border-radius: 5px;
-        max-width: 1200px;
 
-      }
-      .desc p {
-        color: #999;
-      }
-      .inner {
-        border-left: 1px solid #ececec;
-        padding: 0 30px;
-      }
-      .btn-box {
-        margin-top: 15px;
-      }
-      .captain-inner {
-        margin-bottom: 40px;
-      }
-      .img-slot {
-
-        transition: 0.3s;
-        width: 100px;
-        height: 100px;
-        text-align: center;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        margin-bottom: 30px;
-        margin-right: 15px;
-        display: flex;
-      }
-      .img-slot .blue {
-        display: none;
-      }
-      .img-slot.active {
-        box-shadow: 0 0 20px 2px #e8e8e8;
-      }
-      .img-slot.active .blue {
-        display: block;
-      }
-      .img-slot.active .gray {
-        display: none;
-      }
-      .img-slot img {
-        margin-bottom: 10px;
-      }
-      .swiper-tab {
-        display: flex;
-      }
-
-      .list {
-        font-size: 14px;
-        color: #393939;
-        line-height: 35px;
-        font-weight: lighter;
-        font-family: Microsoft YaHei UI;
-      }
-      .list li strong {
-        font-weight: 400;
-      }
-      .list li:before {
-        content: "";
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: #0063ff;
-      }
-      .captain .active  {
-        color: #4758ee;
-      }
-      .captain .active a {
-        color: #4758ee;
-        font-size: 14px;
-      }
-      .captain .active {
-            /*background: #4758ee;*/
-      }
-      .captain li:after {
-        content: "";
-        width: 100px;
-        height: 2px;
-        background: #4758ee;
-        display: inline-block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        transition: width 0.2s;
-      }
-      .captain li.active:after {
-        width: 100%;
-      }
-      .captain-content {
-        background: #fff;
-      }
-      /*.capton-menu {
-        display:inline-block;
-        width:0;
-        height:0;
-        border-top: 20px solid transparent;
-        border-left: 20px solid red;
-        border-bottom: 20px solid transparent;
-        position: fixed;
-        top:  50%;
-        z-index: 11;
-      }*/
-      .capton-menu {
-        display: none;
-        top: 50%;
-        position: fixed;
-        z-index: 10;
-        flex-direction: column;
-        justify-content: space-between;
-        background: #4758ee;
-        width: 50px;
-        height: 30px;
-        background: #4758ee;
-        width: 13px;
-        height: 12px;
-        padding: 10px 7px;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-        box-shadow: 1px 1px 10px #aeb3e0;
-      }
-      .capton-menu span {
-        height: 2px;
-        background: #fff;
-      }
-      .swiper-slide {
-        background: #fff;
-      }
-    </style>
-    <style>
-      @media screen and (max-width: 900px) {
-        .captain {
-          position: fixed;
-          top: 60px;
-          bottom: 0;
-          left: -200px;
-          overflow: hidden;
-          transition: left 0.2s;
-          z-index: 11;
-          background: #fff;
-          box-shadow: 1px 2px 6px #ececec;
-          padding-left: 30px;
-          width: 150px;
-          box-sizing: border-box;
-        }
-        .capton-menu {
-          display: flex;
-        }
-        .open-captain {
-          left: 0;
-        }
-        h2 {
-          font-size: 20px;
-        }
-        h3 {
-          font-size: 20px;
-        }
-        .article {
-          font-size: 12px;
-
-        }
-        .img-slot {
-          width: 80px;
-          height: 80px;
-        }
-        .img-slot img {
-          width: 20px;
-          height: 20px;
-        }
-        .img-slot span {
-          font-size: 10px;
-        }
-        .list li {
-          line-height: 30px;
-        }
-        .desc p {
-          font-size: 12px;
-        }
-      }
-    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but iview-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <header id="header" class="module header-module">
-      <div class="module-inner">
-        <div class="header-left">
-          <div class="logo"><img src="./assets/logo.svg"></div>
-
-        </div>
-        <div class="menu" id="headerMenu">
-          <ul  class="menu-item">
-            <li><a href="" title="首页">首页</a></li>
-            <li class="active"><a href="" title="分发">分发</a></li>
-            <li><a href="" title="封装">封装</a></li>
-            <li><a href="" title="企业签名">企业签名</a></li>
-            <li><a href="" title="文档">文档</a></li>
-            <li><a href="" title="工具">工具</a></li>
-          </ul>
-          <div class="right  pc-right">
-            <a class="btn">
-              <i class="iconfont icon-gift"></i>
-              注册有礼
-            </a>
-            <a class="btn btn-blue">
-              登录
-            </a>
-          </div>
-        </div>
-
-
-        <div class="right wap-right">
-          <div class="more" id="more">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-
-    </header>
+    <!-- #include src="header.html" -->
     <div class="capton-menu">
       <span></span>
       <span></span>
@@ -312,16 +37,13 @@
           <p>稳定、安全、快捷、高扩展的云服务，实时满足您的多样性业务需求。</p>
         </div>
         <ul class="captain-menu">
-          <li class="active">01 分发服务</li>
-          <li>02 封装服务</li>
-          <li>03 企业签名</li>
+          <li class="active">分发服务</li>
         </ul>
       </div>
       <div class="article swiper-no-swiping" id="01cpn">
 
         <div class="swiper-container" id="swiper">
           <div class="swiper-wrapper">
-
             <div class="swiper-slide">
               <div class="captain-content">
                 <div class="captain-inner" >
@@ -380,118 +102,6 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="captain-content">
-                <div class="captain-inner" >
-                  <h3>封装服务</h3>
-                  <div  class="inner">
-                    <p>多种封装模式,告别传统封装局限，按需选择，便捷高效</p>
-
-
-                    <div class="btn-box">
-                      <a href="" title="" class="btn btn-blue">咨询服务</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="captain-inner" id="01cpn">
-                  <h3>产品描述</h3>
-                  <div  class="inner">
-                    <div class="swiper-tab" swiper="packSwiper">
-                      <div class="img-slot active">
-                        <img class="blue" src="./assets/pack-pd.svg" alt="">
-                        <img class="gray" src="./assets/pack.svg" alt="">
-                        <span>传统</span>
-                      </div>
-                      <div class="img-slot">
-                        <img class="blue" src="./assets/pack-sm-pd.svg" alt="">
-                        <img class="gray" src="./assets/pack-sm.svg" alt="">
-                        <span>IOS免签</span>
-                      </div>
-                      <div class="img-slot">
-                        <img class="blue" src="./assets/pack-store-pd.svg" alt="">
-                        <img class="gray" src="./assets/pack-store.svg" alt="">
-                        <span>APP商店</span>
-                      </div>
-                    </div>
-                    <div class="swiper-container" id="packSwiper">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <ol class="list">
-                            <li><strong>启动图:</strong> <span>去除考虑签名贵，签名稳定这些常用的因素，成本低。</span></li>
-                            <li><strong>免信任:</strong> <span>扫码即安装，不需要信任直接打开。</span></li>
-                          </ol>
-                        </div>
-                        <div class="swiper-slide">
-                          <ol class="list">
-                            <li><strong>免签名:</strong> <span>去除考虑签名贵，签名稳定这些常用的因素，成本低。</span></li>
-                            <li><strong>免信任:</strong> <span>扫码即安装，不需要信任直接打开。</span></li>
-                          </ol>
-                        </div>
-                        <div class="swiper-slide">
-                          <ol class="list">
-                            <li><strong>免认证:</strong> <span>告别繁复的流程，编译即上传</span></li>
-                            <li><strong>热更新:</strong> <span>编译即更新成功，零等待.</span></li>
-                          </ol>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="captain-content">
-                <div class="captain-inner" >
-                  <h3>企业签名</h3>
-                  <div  class="inner">
-                    <p>iOS App使用企业证书签名后，即可免提交苹果App Store审核，让用户安装至iOS系统的手机、平板，没有安装数量限制，无需越狱。</p>
-
-
-                    <div class="btn-box">
-                      <a href="" title="" class="btn btn-blue">咨询服务</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="captain-inner" id="01cpn">
-                  <h3>产品描述</h3>
-                  <div  class="inner">
-                    <div class="swiper-tab" swiper="signSwiper">
-                      <div class="img-slot active">
-                        <img class="blue" src="./assets/Features-pd.svg" alt="">
-                        <img class="gray" src="./assets/Features.svg" alt="">
-                        <span>产品特征</span>
-                      </div>
-                      <div class="img-slot">
-                        <img class="blue" src="./assets/Compensate-pd.svg" alt="">
-                        <img class="gray" src="./assets/Compensate.svg" alt="">
-                        <span>掉签赔偿</span>
-                      </div>
-                    </div>
-                    <div class="swiper-container" id="signSwiper">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <ol class="list">
-                            <li><strong>自动签名:</strong> <span>告别传统手动签名，时效慢，效率低，人工无法做到24小时在线。</span></li>
-                            <li><strong>按需付费:</strong> <span>传统收费按月，部分客户可能只需要零时测试使用,我们支持按天付费。</span></li>
-                            <li><strong>证书自选:</strong> <span>用户可以根据自身使用场景选择不同类型证书，运营成本降到最低。</span></li>
-                            <li><strong>高稳定性:</strong> <span>公司运营，自有证书，无需担心掉签问题，掉签即按<掉签赔偿>赔付。</span></li>
-                            <li><strong>一键分发:</strong> <span>签名后的包，即可一键分发到我们分发平台，让工作更有效率。</span></li>
-                            <li><strong>免费更新:</strong> <span>每月无限次数更新，不收取更新费用,无需联系客服，在线更新。/span></li>
-                          </ol>
-                        </div>
-                        <div class="swiper-slide">
-                          <ol class="list">
-                            <li><strong>共享证书:</strong> <span>有效期内免费从签,证书需要等待大概24小时替换完成证书。</span></li>
-                            <li><strong>独立证书:</strong> <span>10分钟内完成证书替换操作,包到期的剩余日期x2赔偿时间</span></li>
-                            <li><strong>独享证书:</strong> <span>未到期掉包全额退款，使用咱们平台分发所消耗流量费用一并赔偿</span></li>
-                          </ol>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -528,45 +138,7 @@
       </div>
     </footer>
     <script type="text/javascript" src=./js/common.js></script>
-    <script>
-    var swiperArg = {
-      effect : 'fade',
-      fadeEffect: {
-        crossFade: true
-      }
-    }
-    $('.captain-menu li').click(function () {
-      let idx = $(this).index()
-      $(this).parent().find('.active').removeClass('active')
-      $(this).addClass('active')
-      mySwiper.slideTo(idx)
-    })
-    $('.capton-menu').click(function (e) {
-      e.stopPropagation()
-      $('.captain').addClass('open-captain')
-    })
-    $('.swiper-tab .img-slot').click(function (e) {
-      e.stopPropagation()
-      let str = $(this).parent().attr('swiper')
-      let idx = $(this).index()
-      console.log(str)
-      $(this).parent().find('.active').removeClass('active')
-      $(this).addClass('active')
-      map[str].slideTo(idx)
-    })
-    $(document).click(function() {
-      $('.captain').removeClass('open-captain')
-    })
-    var mySwiper = new Swiper('#swiper',swiperArg)
-    var signSwiper = new Swiper('#signSwiper',swiperArg)
-    var packSwiper = new Swiper('#packSwiper',swiperArg)
-    var cdnSwiper = new Swiper('#cdnSwiper',swiperArg)
-    var map = {
-      signSwiper: signSwiper,
-      packSwiper: packSwiper,
-      cdnSwiper: cdnSwiper
-    }
-    </script>
+    <script type="text/javascript" src=./js/prd.js></script>
 
   </body>
 </html>
