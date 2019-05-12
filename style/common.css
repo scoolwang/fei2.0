@@ -187,13 +187,14 @@ footer.module {
   display: flex;
 }
 
-.bak span {
+.bak span, .bak a {
   border-right: 1px solid #ccc;
   margin-right: 10px;
   padding-right: 10px;
   line-height: 12px;
+  color: #999;
 }
-.bak span:last-child {
+.bak a {
   border: none;
 }
 .cpn-info {
@@ -409,7 +410,7 @@ footer.module {
   .prd-list.open-prd {
     right: 0;
   }
-  .bak span {
+  .bak span, .bak a {
     margin-right: 8px;
     padding-right: 8px;
     font-size: 10px;
