@@ -32,7 +32,7 @@ $('.pc-prd').hover(function () {
   $(this).removeClass('p-active')
 })
 
-$('#prdList').hover(function () {
+$('#prdList .prd-list-inner').hover(function () {
   $('#prdList').addClass('pc-open-prd')
 }, function (e) {
   if ($(e.relatedTarget).closest('.pc-prd')[0]) {

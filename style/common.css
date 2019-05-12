@@ -100,6 +100,9 @@ ul,li {
   border-bottom: 1px solid transparent;
   transition: color .2s linear,background-color .2s linear,border .2s linear,box-shadow .2s linear;
 }
+.menu-item li {
+  border-bottom: 1px solid transparent;
+}
 .menu-item li.active a {
   color: #4758ee;
 }
@@ -228,7 +231,6 @@ footer.module {
   }
   .prd-list.pc-open-prd {
     height: 230px;
-    overflow: auto;
   }
   .prd-list-inner {
     background: #fff;
@@ -301,6 +303,12 @@ footer.module {
     box-shadow: 1px 2px 6px #ececec;
 
     left: 0;
+  }
+  .cpn-info span {
+    font-size: 12px;
+  }
+  .footer-right ol a {
+    font-size: 12px;
   }
   .menu {
     height: 0;

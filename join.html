@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=750"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="./style/common.css">
+    <link rel="stylesheet" type="text/css" href="./style/font.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <title>飞网 - 让您的应用FEI起来</title>
+    <style>
+      .jop-module {
+        display: flex;
+        padding-top: 100px;
+      }
+      .jop-module h3 {
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .jop-module >p {}
+      .jop-module ul li {}
+      .jop-module .process, .jop-wrap {
+        width: 50%;
+      }
+      .jop-module .process {
+        margin-right: 100px;
+      }
+      .jop-module .process >p, .jop-wrap >p {
+        color: #999;
+      }
+      .jop-module .process ul {
+        margin-top: 50px;
+      }
+      .jop-module .process li {
+        margin-bottom: 20px;
+      }
+      .jop-module .process li >p {
+        font-size: 14px;
+        color: #999;
+      }
+      .jop-module .process li >div {
+        margin-bottom: 15px;
+      }
+      .jop-module .process li span {
+        color: #4758ee;
+        font-weight: bold;
+        padding-right: 10px;
+      }
+
+      .jop {
+        display: flex;
+        margin-top: 50px;
+        overflow: hidden;
+      }
+      .jop-fold-wrap {
+        border-right: 1px solid #e8e8e8;
+        width: 80px;
+         margin-right: 50px;
+      }
+      .jop-fold {
+        width: 80px;
+
+      }
+      .jop-fold ul {
+        display: inline-block;
+      }
+      .jop-fold li {
+        margin-bottom: 20px;
+        line-height: 30px;
+        position: relative;
+      }
+      .jop-fold li:after {
+        content: "";
+        width: 100px;
+        height: 1px;
+        background: #4758ee;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        transition: width 0.2s;
+      }
+      .jop-fold li.active {
+        color: #4758ee;
+      }
+      .jop-fold li.active:after {
+        width: 100%;
+      }
+      .jop-item {
+        margin-bottom: 30px;
+      }
+      .jop-item h4 {
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+      .jop-item ul {
+        padding-left: 20px;
+      }
+      .jop-item li {
+        margin-bottom: 30px;
+        position: relative;
+      }
+      .jop-item li >div:before {
+        content: " ";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background: #4758ee;
+        border-radius: 50%;
+        position: relative;
+        top: -2px;
+        margin-right: 10px;
+      }
+      .jop-item li p {
+        color: #999;
+        font-size: 12px;
+        margin-top: 10px;
+        letter-spacing: 1px;
+      }
+    </style>
+    <style>
+      @media screen and (max-width: 900px) {
+        .jop-module {
+          display: block;
+          padding-top: 50px;
+        }
+        .jop-module h3 {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .jop-module .process ul, .jop {
+          margin-top: 25px;
+        }
+        .jop-module .process, .jop-wrap {
+          margin-bottom: 40px;
+          width: 100%;
+        }
+        .jop-module .process li >p {
+          font-size: 12px;
+        }
+        .jop-fold {
+          width: 60px;
+        }
+        .jop-fold-wrap {
+          margin-right: 20px;
+        }
+        .jop-item h4 {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but iview-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <header id="header" class="module header-module">
+      <div class="module-inner">
+        <div class="header-left">
+          <div class="logo"><img src="./assets/logo.svg"></div>
+
+        </div>
+        <div class="menu" id="headerMenu">
+          <ul  class="menu-item">
+            <li class=""><a href="./index.html" title="首页">首页</a></li>
+            <li class="pc-prd"><a href="javascript:void(0)" title="产品">产品</a></li>
+            <li class="wap-prd"><a href="javascript:void(0)" title="产品">产品</a></li>
+            <li><a href="./doc.html" title="文档">文档</a></li>
+            <li><a href="" title="工具">工具</a></li>
+          </ul>
+          <div class="right  pc-right">
+            <a class="btn">
+              <i class="iconfont icon-gift"></i>
+              注册有礼
+            </a>
+            <a class="btn btn-blue">
+              登录
+            </a>
+          </div>
+        </div>
+
+
+        <div class="right wap-right">
+          <div class="more" id="more">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <div class="prd-list" id="prdList">
+      <div class="prd-list-inner">
+        <div class="prd-tag">
+          <h3>分发</h3>
+          <ul>
+            <li><a href="./cdn.html?idx=0" title="">分发</a></li>
+          </ul>
+        </div>
+        <div class="prd-tag">
+          <h3>封装</h3>
+          <ul>
+            <li><a href="./pack.html?idx=0" title="">传统封装</a></li>
+            <li><a href="/pack.html?idx=1" title="">无闪封装</a></li>
+          </ul>
+        </div>
+        <div class="prd-tag">
+          <h3>签名</h3>
+          <ul>
+            <li><a href="./sign.html?idx=0" title="">个人签名</a></li>
+            <li><a href="./sign.html?idx=1" title="">企业签名</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="module">
+      <div class="module-inner jop-module">
+        <div class="process">
+          <h3>招聘流程</h3>
+          <p>Cruit</p>
+          <ul>
+            <li>
+              <div class="p-title">
+                <span>01</span>简历投递
+              </div>
+              <p>发送个人简历：GG@fei.cn</p>
+            </li>
+            <li>
+              <div class="p-title">
+                <span>02</span> 面试邀约
+              </div>
+              <p>我们会在一周时间内，电话联系简历通过筛选等候选人，安排面试。</p>
+            </li>
+            <li>
+              <div class="p-title">
+                <span>03</span>  面试 & offer
+              </div>
+              <p>通知面试地点，通过面试的将收到飞网录用通知书。</p>
+            </li>
+          </ul>
+        </div>
+        <div class="jop-wrap">
+          <h3>招聘职位</h3>
+          <p>Post</p>
+          <div class="jop">
+            <div class="jop-fold-wrap">
+              <div class="jop-fold">
+                <ul>
+                  <li class="active">技术类</li>
+                  <li>销售类</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="jop-list">
+              <div class="swiper-container" id="swiperJop">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="jop-item">
+                      <h4>全栈开发工程师</h4>
+                      <ul>
+                        <li>
+                          <div>
+                            工作职责
+                          </div>
+                          <p>负责飞网产品的 Web 服务的研发（含前端及后端），参与设计与开发跨产品线的 Web 前后端框架</p>
+                        </li>
+                        <li>
+                          <div>
+                            职责要求
+                          </div>
+                          <p>精通 HTML/XHTML、CSS，熟悉页面架构和布局，对Web标准和标签语义化有深入理解；</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="jop-item">
+                      <h4>CDN架构师</h4>
+                      <ul>
+                        <li>
+                          <div>
+                            工作职责
+                          </div>
+                          <p>参与大客户的对接工作，搞定大客户的质量对比测试及调优，落实大客户的需求定制，确保大客户的顺利接入，解决CDN的疑难问题；</p>
+                        </li>
+                         <li>
+                          <div>
+                            职责要求
+                          </div>
+                          <p>有cdn从业经验，对商业CDN技术原理与业务运作方式比较了解；熟悉网络协议；参与或熟悉某些开源项目优先；</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="jop-item">
+                      <h4>大客户经理</h4>
+                      <ul>
+                        <li>
+                          <div>
+                            工作职责
+                          </div>
+                          <p>挖掘公司产品在行业内销售机会，组织协调公司技术 资源满足客户的解决方案需求，负责大客户的合同签署，收款跟进和关系维护，形成持续的合作。</p>
+                        </li>
+                        <li>
+                          <div>
+                            职责要求
+                          </div>
+                          <p>具有很强的逻辑思维和分析能力，善于分析各种竞合关系。提升品牌价值。</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="module">
+      <div class="module-inner footer-inner">
+        <div>
+          <img height="46" src="./assets/logo.svg">
+          <p class="bak"><span>© 2019 Fei.Cn</span><span>苏ICP备18049713号-1</span><span>用户服务协议</span></p>
+          <div>
+            <p class="cpn-info"><span>盐城畅付网络科技有限公司</span><span><a href="Tel:0515-8888-8786">Tel：0515-8888-8786</a></span><span>举报邮箱：GG@fei.cn</span></p>
+
+          </div>
+        </div>
+        <div class="footer-right">
+          <ol>
+            <li><h4>关于我们</h4></li>
+            <li><a href="" title="">关于我们</a></li>
+            <li><a href="" title="">联系我们</a></li>
+          </ol>
+          <ol>
+            <li><h4>诚邀合作</h4></li>
+            <li><a href="" title="">加入我们</a></li>
+          </ol>
+          <ol>
+            <li><h4>快速入口</h4></li>
+            <li><a href="" title="">控制台</a></li>
+            <li><a href="" title="">文档中心</a></li>
+            <li><a href="" title="">注册会员</a></li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src=./js/common.js></script>
+    <script>
+      let swiper = new Swiper('#swiperJop', {
+        effect : 'fade',
+        fadeEffect: {
+          crossFade: true
+        }
+      })
+      $('.jop-fold li').click(function () {
+        let idx = $(this).index()
+        $(this).parent().find('.active').removeClass('active')
+        $(this).addClass('active')
+        swiper.slideTo(idx)
+      })
+    </script>
+  </body>
+</html>

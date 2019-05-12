@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=750"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="./style/common.css">
+    <link rel="stylesheet" type="text/css" href="./style/font.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <title>飞网 - 让您的应用FEI起来</title>
+    <style>
+      .call-module {
+        padding-top: 50px;
+      }
+      .call-module h2 {
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .call-module p {
+        line-height: 24px;
+        color: #999999;
+        font-size: 14px;
+      }
+      .call-module strong {
+        margin: 20px 0;
+        display: block;
+      }
+      .call-module .line {
+        display: inline-block;
+        width: 60px;
+        height: 2px;
+        background: #393939;
+        margin: 40px 0px;
+
+      }
+      .item-title {
+        display: flex;
+        align-items: center;
+        margin: 40px 0;
+      }
+      .item-title span {
+        padding-left: 20px;
+        font-size: 20px;
+        color: #393939;
+      }
+      .item-box {
+        padding-left: 30px;
+        border-left: 1px solid #e6e6e6;
+      }
+      .item-box >div {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+      }
+      .item-box >div span {
+        padding-left: 20px;
+      }
+      .call-item {
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but iview-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <header id="header" class="module header-module">
+      <div class="module-inner">
+        <div class="header-left">
+          <div class="logo"><img src="./assets/logo.svg"></div>
+
+        </div>
+        <div class="menu" id="headerMenu">
+          <ul  class="menu-item">
+            <li class=""><a href="./index.html" title="首页">首页</a></li>
+            <li class="pc-prd"><a href="javascript:void(0)" title="产品">产品</a></li>
+            <li class="wap-prd"><a href="javascript:void(0)" title="产品">产品</a></li>
+            <li><a href="./doc.html" title="文档">文档</a></li>
+            <li><a href="" title="工具">工具</a></li>
+          </ul>
+          <div class="right  pc-right">
+            <a class="btn">
+              <i class="iconfont icon-gift"></i>
+              注册有礼
+            </a>
+            <a class="btn btn-blue">
+              登录
+            </a>
+          </div>
+        </div>
+
+
+        <div class="right wap-right">
+          <div class="more" id="more">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <div class="prd-list" id="prdList">
+      <div class="prd-list-inner">
+        <div class="prd-tag">
+          <h3>分发</h3>
+          <ul>
+            <li><a href="./cdn.html?idx=0" title="">分发</a></li>
+          </ul>
+        </div>
+        <div class="prd-tag">
+          <h3>封装</h3>
+          <ul>
+            <li><a href="./pack.html?idx=0" title="">传统封装</a></li>
+            <li><a href="/pack.html?idx=1" title="">无闪封装</a></li>
+          </ul>
+        </div>
+        <div class="prd-tag">
+          <h3>签名</h3>
+          <ul>
+            <li><a href="./sign.html?idx=0" title="">个人签名</a></li>
+            <li><a href="./sign.html?idx=1" title="">企业签名</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="module call-module">
+      <div class="module-inner">
+        <h2>联系我们</h2>
+        <div class="line"></div>
+        <p>如果您在使用过程中对功能产生疑问或出现错误提示，请与我们的商务或技术人员联系</p>
+        <strong>业务咨询： 0515-88888786</strong>
+        <div class="call-item">
+          <div class="item-title">
+            <img src="./assets/Consultation.svg" alt="">
+            <span>商务合作</span>
+          </div>
+          <div class="item-box">
+            <p>业务咨询等问题请与下方商务人员联系</p>
+            <div>
+              <img src="./assets/qq.svg" alt="">
+              <span>商户客服</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="call-item">
+          <div class="item-title">
+            <img src="./assets/Aftersale.svg" alt="">
+            <span>售后服务</span>
+          </div>
+          <div class="item-box">
+            <p>技术故障请与技术人员联系</p>
+            <div>
+              <img src="./assets/qq.svg" alt="">
+              <span>技术客服</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <footer class="module">
+      <div class="module-inner footer-inner">
+        <div>
+          <img height="46" src="./assets/logo.svg">
+          <p class="bak"><span>© 2019 Fei.Cn</span><span>苏ICP备18049713号-1</span><span>用户服务协议</span></p>
+          <div>
+            <p class="cpn-info"><span>盐城畅付网络科技有限公司</span><span><a href="Tel:0515-8888-8786">Tel：0515-8888-8786</a></span><span>举报邮箱：GG@fei.cn</span></p>
+
+          </div>
+        </div>
+        <div class="footer-right">
+          <ol>
+            <li><h4>关于我们</h4></li>
+            <li><a href="" title="">关于我们</a></li>
+            <li><a href="" title="">联系我们</a></li>
+          </ol>
+          <ol>
+            <li><h4>诚邀合作</h4></li>
+            <li><a href="" title="">加入我们</a></li>
+          </ol>
+          <ol>
+            <li><h4>快速入口</h4></li>
+            <li><a href="" title="">控制台</a></li>
+            <li><a href="" title="">文档中心</a></li>
+            <li><a href="" title="">注册会员</a></li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src=./js/common.js></script>
+  </body>
+</html>
