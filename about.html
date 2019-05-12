@@ -21,12 +21,16 @@
         background-size: cover;
         margin-bottom: 50px;
       }
+      .about-desc {
+        padding: 0 5%;
+      }
       .about-inner {
         display: flex;
         flex-direction: column;
         justify-content: center;
         color: #fff;
         height: 100%;
+        padding: 0 5%;
       }
       .about-inner h1 {
         font-weight: 400;
@@ -56,6 +60,20 @@
       }
       .about-desc {
         padding-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .about-inner h1 {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+        .about-inner p {
+          font-size: 12px;
+          line-height: 18px;
+          width: 90%;
+        }
+        .about-bg {
+          height: 200px;
+        }
       }
     </style>
   </head>
