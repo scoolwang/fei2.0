@@ -1,0 +1,37 @@
+@font-face {
+  font-family:'Ionicons';
+  src:url(./fonts/ionicons.woff2) format("woff2"),
+  url(./fonts/ionicons.woff) format("woff"),
+  url(./fonts/ionicons.ttf) format("truetype"),
+  url(./fonts/ionicons.svg#Ionicons) format("svg");
+  font-weight:400;
+  font-style:normal
+}
+
+.ivu-icon {
+  display: inline-block;
+  font-family: 'Ionicons';
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle
+}
+
+.ivu-icon-logo-windows:before {
+  content: "\F329"
+}
+.ivu-icon-logo-apple:before {
+  content: "\F301"
+}
+.ivu-icon-logo-android:before {
+  content: "\F2FF"
+}
+.ivu-icon-ios-aperture:before {
+  content: "\F10E"
+}

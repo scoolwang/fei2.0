@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=750"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style/markdown.css">
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
     <link rel="stylesheet" type="text/css" href="./style/common.css">
     <link rel="stylesheet" type="text/css" href="./style/font.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css">
-    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="./style/swiper.min.css">
+
+    <script src="./js/swiper.min.js"></script>
     <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      src="./js/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
     <title>飞网 - 让您的应用FEI起来</title>
@@ -49,6 +51,7 @@
       }
       .captain ul {
         display: inline-block;
+        padding-top: 5px;
       }
       .captain ul a {
         color: #999;
@@ -60,6 +63,7 @@
         line-height: 35px;
         border-bottom: 1px solid transparent;
         position: relative;
+        line-height: 25px;
       }
       /*.captain .sub-menu li:before {
         content: " ";
@@ -163,6 +167,12 @@
       }
       .swiper-slide {
         background: #fff;
+      }
+      ol.linenums {
+        margin-left: 26px;
+      }
+      ol.linenums >li {
+        padding-left: 25px;
       }
     </style>
     <style>
@@ -270,9 +280,8 @@
     </div>
     <div class="article-wrap">
 
-
       <div class="captain">
-        <div  class="captain-menu">
+        <!-- <div  class="captain-menu">
           <div class="fold">
             <div class="parent-menu">
               文档标题
@@ -282,89 +291,578 @@
               <li class="menu-item">一级标题</li>
             </ul>
           </div>
-        </div>
+        </div> -->
+
         <div  class="captain-menu">
           <div class="fold">
-            <ul class="top-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题</li>
-            </ul>
-          </div>
-        </div>
-        <div  class="captain-menu">
-          <div class="fold">
-            <div class="parent-menu">
-              文档标题
+            <div class="parent-menu active">
+              网站封装
             </div>
             <ul class="sub-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题</li>
-            </ul>
-          </div>
-        </div>
-        <div  class="captain-menu">
-          <div class="fold">
-            <div class="parent-menu">
-              文档标题
-            </div>
-            <ul class="sub-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题</li>
-            </ul>
-          </div>
-        </div>
-        <div  class="captain-menu">
-          <div class="fold">
-            <div class="parent-menu">
-              文档标题
-            </div>
-            <ul class="sub-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题</li>
-            </ul>
-          </div>
-        </div>
-        <div  class="captain-menu">
-          <div class="fold">
-            <div class="parent-menu">
-              文档标题
-            </div>
-            <ul class="sub-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题</li>
-            </ul>
-          </div>
-        </div>
-        <div  class="captain-menu">
-          <div class="fold">
-            <div class="parent-menu">
-              文档标题
-            </div>
-            <ul class="sub-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题</li>
-            </ul>
-          </div>
-        </div>
-        <div  class="captain-menu">
-          <div class="fold">
-            <div class="parent-menu">
-              文档标题
-            </div>
-            <ul class="sub-menu">
-              <li class="menu-item">一级标题</li>
-              <li class="menu-item">一级标题1</li>
+              <li class="menu-item active">API模块</li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="article swiper-no-swiping" id="01cpn">
-
+      <div class="article swiper-no-swiping" id="wmd-preview">
         <div class="swiper-container" id="swiper">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-              <div class="doc-content"></div>
+              <div class="doc-content">
+
+                <div class="wmd-preview" data-medium-element="true">
+                 <div class="md-section-divider"></div>
+                 <div class="md-section-divider"></div>
+                 <h1 data-anchor-id="hu04" id="传统封装模块api文档">传统封装模块API文档</h1>
+                 <hr />
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="ra5x" id="调用方法">调用方法：</h3>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="ojaf" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pln">appapi</span><span class="pun">(</span><span class="pln">component</span><span class="pun">,</span><span class="pln"> action</span><span class="pun">,</span><span class="pln"> params</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">)</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="0uf1" id="参数说明">参数说明:</h3>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="oa2q" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="str">&quot;component&quot;</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;组件名称&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="str">&quot;action&quot;</span><span class="pln">    </span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;方法名称&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="str">&quot;params&quot;</span><span class="pln">    </span><span class="pun">:</span><span class="pln"> </span><span class="pun">{具体参数列表</span><span class="pln">json</span><span class="pun">对象}</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="str">&quot;callback&quot;</span><span class="pln">  </span><span class="pun">:</span><span class="pln"> </span><span class="pun">回调</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="t43u" id="callback-返回结果json的统一格式如下">callback 返回结果json的统一格式如下：</h3>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="di1z" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"></code></li>
+                   <li class="L1"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pln">    </span><span class="str">&quot;success&quot;</span><span class="pun">:</span><span class="pln">true</span><span class="pun">,</span><span class="pln"> </span><span class="pun">//</span><span class="pln"> </span><span class="pun">成功或失败</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="pln">    </span><span class="str">&quot;code&quot;</span><span class="pun">:</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="pun">//错误码，</span><span class="lit">0</span><span class="pun">为成功</span></code></li>
+                   <li class="L4"><code class="language-python"><span class="pln">    </span><span class="str">&quot;errorMessage&quot;</span><span class="pun">:</span><span class="str">&quot;&quot;</span><span class="pun">,</span><span class="pln"> </span><span class="pun">//错误信息</span></code></li>
+                   <li class="L5"><code class="language-python"><span class="pln">    </span><span class="str">&quot;data&quot;</span><span class="pun">:{</span><span class="pln"> </span><span class="pun">//返回的结果，</span><span class="pln">json</span><span class="pun">格式</span></code></li>
+                   <li class="L6"><code class="language-python"><span class="pln">    </span><span class="pun">}</span></code></li>
+                   <li class="L7"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <hr />
+                 <table data-anchor-id="44nm" class="table table-striped-white table-bordered">
+                  <thead>
+                   <tr>
+                    <th style="text-align:right;">编号</th>
+                    <th style="text-align:right;">组件名</th>
+                    <th style="text-align:right;">方法名</th>
+                    <th style="text-align:right;">说明</th>
+                    <th style="text-align:right;">API版本</th>
+                   </tr>
+                  </thead>
+                  <tbody>
+                   <tr>
+                    <td style="text-align:right;">1001</td>
+                    <td style="text-align:right;">genenal</td>
+                    <td style="text-align:right;">getDeviceInfo</td>
+                    <td style="text-align:right;">获取设备信息</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">1002</td>
+                    <td style="text-align:right;">genenal</td>
+                    <td style="text-align:right;">setClipboard</td>
+                    <td style="text-align:right;">设置剪切板内容</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">1003</td>
+                    <td style="text-align:right;">genenal</td>
+                    <td style="text-align:right;">getClipboard</td>
+                    <td style="text-align:right;">获取剪切板内容</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">1004</td>
+                    <td style="text-align:right;">genenal</td>
+                    <td style="text-align:right;">getCacheSize</td>
+                    <td style="text-align:right;">获取缓存大小</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">1005</td>
+                    <td style="text-align:right;">genenal</td>
+                    <td style="text-align:right;">clearCache</td>
+                    <td style="text-align:right;">清空缓存</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">1006</td>
+                    <td style="text-align:right;">genenal</td>
+                    <td style="text-align:right;">getContactList</td>
+                    <td style="text-align:right;">获取联系人列表</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">2001</td>
+                    <td style="text-align:right;">ui</td>
+                    <td style="text-align:right;">toast</td>
+                    <td style="text-align:right;">提示文字</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">2002</td>
+                    <td style="text-align:right;">ui</td>
+                    <td style="text-align:right;">showLoading</td>
+                    <td style="text-align:right;">加载中动画</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">2003</td>
+                    <td style="text-align:right;">ui</td>
+                    <td style="text-align:right;">hideLoading</td>
+                    <td style="text-align:right;">停止加载中动画</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">2004</td>
+                    <td style="text-align:right;">ui</td>
+                    <td style="text-align:right;">alert</td>
+                    <td style="text-align:right;">确认弹窗</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">2005</td>
+                    <td style="text-align:right;">ui</td>
+                    <td style="text-align:right;">confirm</td>
+                    <td style="text-align:right;">对话框弹窗</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">2006</td>
+                    <td style="text-align:right;">ui</td>
+                    <td style="text-align:right;">actionSheet</td>
+                    <td style="text-align:right;">选项底部弹窗</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">3001</td>
+                    <td style="text-align:right;">app</td>
+                    <td style="text-align:right;">openApp</td>
+                    <td style="text-align:right;">打开第三方应用</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">3002</td>
+                    <td style="text-align:right;">app</td>
+                    <td style="text-align:right;">appInstalled</td>
+                    <td style="text-align:right;">判断第三方应用是否安装</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">3003</td>
+                    <td style="text-align:right;">app</td>
+                    <td style="text-align:right;">exit</td>
+                    <td style="text-align:right;">退出应用</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">4001</td>
+                    <td style="text-align:right;">scanCode</td>
+                    <td style="text-align:right;">gotoScanCode</td>
+                    <td style="text-align:right;">打开扫二维码页面</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                   <tr>
+                    <td style="text-align:right;">5001</td>
+                    <td style="text-align:right;">location</td>
+                    <td style="text-align:right;">getLocation</td>
+                    <td style="text-align:right;">获取定位信息</td>
+                    <td style="text-align:right;">1.0.0</td>
+                   </tr>
+                  </tbody>
+                 </table>
+                 <hr />
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="d02p" id="调用列子">调用列子:</h3>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="p16l" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">//</span><span class="pln"> </span><span class="pun">获取设备信息</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">appapi</span><span class="pun">(</span><span class="str">'general'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'getDeviceInfo'</span><span class="pun">,</span><span class="pln"> null</span><span class="pun">,</span><span class="pln"> function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">res </span><span class="pun">&amp;&amp;</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">success</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="pln">        consolo</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'设备id'</span><span class="pun">,</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">data</span><span class="pun">.</span><span class="pln">deviceId</span><span class="pun">)</span></code></li>
+                   <li class="L4"><code class="language-python"><span class="pln">    </span><span class="pun">}</span></code></li>
+                   <li class="L5"><code class="language-python"><span class="pun">})</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="y0em" id="1001getdeviceinfo">1001.getDeviceInfo</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="5yo2" id="params">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="8yhz" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="cht3" id="返回结果">返回结果:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="8f2u" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">&quot;appVersion&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;app版本&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pln">    </span><span class="str">&quot;osVersion&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;系统版本&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="pln">    </span><span class="str">&quot;deviceWidth&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;屏幕宽度&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L4"><code class="language-python"><span class="pln">    </span><span class="str">&quot;deviceHeight&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;屏幕高度&quot;</span></code></li>
+                   <li class="L5"><code class="language-python"><span class="pln">    </span><span class="str">&quot;deviceId&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;唯一设备码&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L6"><code class="language-python"><span class="pln">    </span><span class="str">&quot;platform&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;设备平台，ios或android&quot;</span><span class="pun">,</span></code></li>
+                   <li class="L7"><code class="language-python"><span class="pln">    </span><span class="str">&quot;dpr&quot;</span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;屏幕因子&quot;</span></code></li>
+                   <li class="L8"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="s8fh" id="1002setclipboard">1002.setClipboard</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="o807" id="params-1">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="y6m8" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'text'</span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pln"> </span><span class="pun">//</span><span class="pln"> </span><span class="pun">文字内容</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="495v" id="返回结果-1">返回结果:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="4rss" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="tfdr" id="1003getclipboard">1003.getClipboard</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="lez9" id="params-2">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="fiqq" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="tk70" id="返回结果-2">返回结果:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="m6wx" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'text'</span><span class="pun">:</span><span class="pln"> </span><span class="str">''</span><span class="pln"> </span><span class="pun">//</span><span class="pln"> </span><span class="pun">文字内容</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="3fmm" id="1004getcachesize">1004.getCacheSize</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="3jx9" id="params-3">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="vaon" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="m5cr" id="返回结果-3">返回结果:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="41wu" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'size'</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">//</span><span class="pln"> </span><span class="pun">单位字节</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="v1i7" id="1005clearcache">1005.clearCache</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="sk63" id="params-4">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="ctqr" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="3shs" id="返回结果-4">返回结果：</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="w882" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="o3m2" id="1006getcontactlist">1006.getContactList</h3>
+                 <ul data-anchor-id="r83w">
+                  <li>注意:部分设备无法获取</li>
+                 </ul>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="sjin" id="params-5">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="f3e7" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="w8mw" id="返回结果-5">返回结果：</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="feb5" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'list'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pln">        </span><span class="pun">{</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="pln">            </span><span class="str">'name'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'姓名'</span></code></li>
+                   <li class="L4"><code class="language-python"><span class="pln">            </span><span class="str">'phones'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span></code></li>
+                   <li class="L5"><code class="language-python"><span class="pln">                </span><span class="str">'10010'</span><span class="pun">,</span></code></li>
+                   <li class="L6"><code class="language-python"><span class="pln">                </span><span class="str">'100086'</span></code></li>
+                   <li class="L7"><code class="language-python"><span class="pln">            </span><span class="pun">]</span></code></li>
+                   <li class="L8"><code class="language-python"><span class="pln">        </span><span class="pun">}</span></code></li>
+                   <li class="L9"><code class="language-python"><span class="pln">    </span><span class="pun">]</span></code></li>
+                   <li class="L0"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="2rdr" id="2001toast">2001.toast</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="up6s" id="params-6">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="owxa" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="ygmp" id="返回结果-6">返回结果：</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="1v5i" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'message'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'提示文字'</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="p9h5" id="2002showloading">2002.showLoading</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="vk8e" id="params-7">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="iwi0" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="dtqh" id="返回结果-7">返回结果：</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="dx1k" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="6vr5" id="2003hideloading">2003.hideLoading</h3>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="xfjo" id="params-8">params:</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="3cyd" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h4 data-anchor-id="1yys" id="返回结果-8">返回结果：</h4>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="pis2" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="leh4" id="2004alert">2004.alert</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="b5sf" id="params-1-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="7jyh" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'title: '</span><span class="pun">标题</span><span class="str">', </span></code></li>
+                   <li class="L2"><code class="language-python"><span class="str">    '</span><span class="pln">message</span><span class="str">': '</span><span class="pun">内容</span><span class="str">', </span></code></li>
+                   <li class="L3"><code class="language-python"><span class="str">    '</span><span class="pln">confirmButton</span><span class="str">': '</span><span class="pun">确认按钮文字</span><span class="str">'</span></code></li>
+                   <li class="L4"><code class="language-python"><span class="str">}</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="pum2">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="sga0" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="igq8" id="2005confirm">2005.confirm</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="zsjt" id="params-1-1-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="tkl6" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'title: '</span><span class="pun">标题</span><span class="str">', </span></code></li>
+                   <li class="L2"><code class="language-python"><span class="str">    '</span><span class="pln">message</span><span class="str">': '</span><span class="pun">内容</span><span class="str">', </span></code></li>
+                   <li class="L3"><code class="language-python"><span class="str">    '</span><span class="pln">confirmButton</span><span class="str">': '</span><span class="pun">确认按钮文字</span><span class="str">',</span></code></li>
+                   <li class="L4"><code class="language-python"><span class="str">    '</span><span class="pln">cancelButton</span><span class="str">': '</span><span class="pun">取消按钮文字</span><span class="str">'</span></code></li>
+                   <li class="L5"><code class="language-python"><span class="str">}</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="dloh">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="stzb" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'index'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'点击的按钮索引值'</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="jzy7" id="2006actionsheet">2006.actionSheet</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="vbtc" id="params-2-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="1s4m" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'title: '</span><span class="pun">标题</span><span class="str">', </span></code></li>
+                   <li class="L2"><code class="language-python"><span class="str">    '</span><span class="pln">items</span><span class="str">': [ // 选项数组</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="str">        '</span><span class="pln">aaa</span><span class="str">', </span></code></li>
+                   <li class="L4"><code class="language-python"><span class="str">        '</span><span class="pln">bbb</span><span class="str">', </span></code></li>
+                   <li class="L5"><code class="language-python"><span class="str">        '</span><span class="pln">ccc</span><span class="str">'</span></code></li>
+                   <li class="L6"><code class="language-python"><span class="str">    ]</span></code></li>
+                   <li class="L7"><code class="language-python"><span class="str">}</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="6w4q">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="qsrb" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'index'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'点击的选项索引值'</span><span class="pun">,</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pln">    </span><span class="str">'item'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'选项内容'</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="0g2o" id="3001openapp">3001.openApp</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="44u9" id="params-3-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="gqjp" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'bundle: '</span><span class="pln">iOS</span><span class="pun">的</span><span class="pln">scheme</span><span class="pun">或安卓的包名</span><span class="str">'</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="str">}</span></code></li>
+                  </ol></pre>
+                 <ul data-anchor-id="yui7">
+                  <li>微信：weixin:// QQ：mqqflyticket:// 支付宝：alipay://</li>
+                 </ul>
+                 <p data-anchor-id="knju">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="e0yk" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="rz8z" id="3002appinstalled">3002.appInstalled</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="a5ts" id="params-4-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="6h2t" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'bundle: '</span><span class="pln">iOS</span><span class="pun">的</span><span class="pln">scheme</span><span class="pun">或安卓的包名</span><span class="str">'</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="str">}</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="3ijj">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="fi8m" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'result'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'1已安装0未安装'</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="c3j5" id="3003exit">3003.exit</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="2h20" id="params-5-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="y6mh" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="lswa">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="j4na" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">缺省</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="jbli" id="4001gotoscancode">4001.gotoScanCode</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="nc9c" id="params-6-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="29k5" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="9qle">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="9d10" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'result'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'识别结果'</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                 <div class="md-section-divider"></div>
+                 <h3 data-anchor-id="3fwu" id="5001getlocation">5001.getLocation</h3>
+                 <div class="md-section-divider"></div>
+                 <h5 data-anchor-id="n8ox" id="params-7-1">params:</h5>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="2crc" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">无</span></code></li>
+                  </ol></pre>
+                 <p data-anchor-id="0r9e">返回结果：</p>
+                 <div class="md-section-divider"></div>
+                 <pre class="prettyprint linenums prettyprinted" data-anchor-id="3cj9" style="">
+                  <ol class="linenums">
+                   <li class="L0"><code class="language-python"><span class="pun">{</span></code></li>
+                   <li class="L1"><code class="language-python"><span class="pln">    </span><span class="str">'longitude'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'经度'</span><span class="pun">,</span></code></li>
+                   <li class="L2"><code class="language-python"><span class="pln">    </span><span class="str">'latitude'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'纬度'</span></code></li>
+                   <li class="L3"><code class="language-python"><span class="pun">}</span></code></li>
+                  </ol></pre>
+                </div>
+
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="doc-content">
+
+                <div class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;">
+                 <div class="md-section-divider"></div>
+                 <div class="md-section-divider"></div>
+                 <h1 data-anchor-id="m2yv" id="欢迎使用-cmd-markdown-编辑阅读器">文档2</h1>
+                 <hr />
+                 <p data-anchor-id="h810">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="doc-content">
+
+                <div class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;">
+                 <div class="md-section-divider"></div>
+                 <div class="md-section-divider"></div>
+                 <h1 data-anchor-id="m2yv" id="欢迎使用-cmd-markdown-编辑阅读器">文档3</h1>
+                 <hr />
+                 <p data-anchor-id="h810">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="doc-content">
+
+                <div class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;">
+                 <div class="md-section-divider"></div>
+                 <div class="md-section-divider"></div>
+                 <h1 data-anchor-id="m2yv" id="欢迎使用-cmd-markdown-编辑阅读器">文档4</h1>
+                 <hr />
+                 <p data-anchor-id="h810">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：</p>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -376,21 +874,21 @@
       <div class="module-inner footer-inner">
         <div>
           <img height="46" src="./assets/logo.svg">
-          <p class="bak"><span>© 2019 Fei.Cn</span><span>苏ICP备18049713号-1</span><span>用户服务协议</span></p>
+          <p class="bak"><span>© 2019 Fei.Cn</span><a href="./protocol.html">苏ICP备18049713号-1</a><a href="./protocol.html">用户服务协议</a></p>
           <div>
-            <p class="cpn-info"><span>盐城畅付网络科技有限公司</span><span>Tel：<a href="Tel:0515-8888-8786">0515-8888-8786</a></span><span>举报邮箱：GG@fei.cn</span></p>
+            <p class="cpn-info"><span>盐城畅付网络科技有限公司</span><span>举报邮箱：GG@fei.cn</span></p>
 
           </div>
         </div>
         <div class="footer-right">
           <ol>
             <li><h4>关于我们</h4></li>
-            <li><a href="" title="">关于我们</a></li>
-            <li><a href="" title="">联系我们</a></li>
+            <li><a href="./about.html" title="">关于我们</a></li>
+            <li><a href="./call.html" title="">联系我们</a></li>
           </ol>
           <ol>
             <li><h4>诚邀合作</h4></li>
-            <li><a href="" title="">加入我们</a></li>
+            <li><a href="./join.html" title="">加入我们</a></li>
           </ol>
           <ol>
             <li><h4>快速入口</h4></li>
@@ -418,12 +916,14 @@
       e.stopPropagation()
       $('.captain').addClass('open-captain')
     })
-    $('.menu-item').click(function (e) {
+    $('.captain .menu-item').click(function (e) {
       e.stopPropagation()
-      let idx = $(this).index()
+      let idx = $('.captain .menu-item').index($(this))
       $(this).closest('.captain').find('.active').removeClass('active')
       $(this).closest('.fold').find('.parent-menu').addClass('active')
       $(this).addClass('active')
+      console.log(idx)
+      $(document).scrollTop(0)
       mySwiper.slideTo(idx)
     })
     $(document).click(function() {

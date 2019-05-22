@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 .captain {
-  width: 400px;
+  width: 250px;
   margin-right: 50px;
   padding-right: 10px;
 }
@@ -57,7 +57,7 @@
   margin-bottom: 30px;
   border-radius: 5px;
   max-width: 1200px;
-
+  width: 250px;
 }
 .desc p {
   color: #999;
@@ -233,6 +233,9 @@
   }
   .list li {
     line-height: 30px;
+  }
+  .desc {
+    width: 150px;
   }
   .desc p {
     font-size: 12px;

@@ -100,6 +100,9 @@ ul,li {
   border-bottom: 1px solid transparent;
   transition: color .2s linear,background-color .2s linear,border .2s linear,box-shadow .2s linear;
 }
+.menu-item a:hover {
+  text-decoration: none;
+}
 .menu-item li {
   border-bottom: 1px solid transparent;
 }
@@ -134,6 +137,9 @@ ul,li {
 .header-module .btn {
   padding: 8px 15px;
 }
+.header-module .btn:hover {
+  text-decoration: none;
+}
 .header-module .module-inner .pc-right {
   display: flex;
   height: 35px;
@@ -147,6 +153,9 @@ ul,li {
 }
 .header-module .p-active a {
   color: #4758ee;
+}
+.prd-list ul li a:hover {
+  text-decoration: none;
 }
 /** 底部 */
 .footer-inner {
@@ -194,7 +203,7 @@ footer.module {
   line-height: 12px;
   color: #999;
 }
-.bak a {
+.bak a:last-child {
   border: none;
 }
 .cpn-info {
@@ -368,9 +377,9 @@ footer.module {
     z-index: 111;
     transition: right .1s linear;
   }
-.prd-list ul li {
-  line-height: 40px;
-}
+  .prd-list ul li {
+    line-height: 40px;
+  }
 
   .prd-list ul li a {
     display: block;

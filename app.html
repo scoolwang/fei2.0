@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <title></title>
+  <link rel="icon" href="https://static.fei.cn/images/fav_icon.png" type="image/x-icon" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+<meta name="description" content="飞网（fei.cn）是先进的app应用服务平台,为中小企业开发者提供网站打包,企业签名,应用发布提供解决方案,飞网使命让您的应用飞起来！">
+<meta name="keywords" content="飞网,内测分发托管,app内测,app封装,app测试,免费打包,app企业签名,ios企业签名,udid获取,android内测,android打包,android发布,苹果企业证书,全自动处理">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    Font-family: "PingFangSC-Light", "Microsoft YaHei", Roboto,Helvetica Neue Light, Tahoma, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+  }
+  #app {
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f3f3f3;
+    Font-family: "PingFangSC-Light", "Microsoft YaHei", Roboto,Helvetica Neue Light, Tahoma, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  }
+  .top-wrap {
+    background: #fff;
+    box-shadow: 1px 2px 10px #dadada;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+  }
+  .tab {
+    border: 1px solid #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 12px;
+    line-height: 30px;
+  }
+  .tab .active {
+    color: #fff;
+    background: #2196F3;
+  }
+  .tab div {
+    border-right: 1px solid #f3f3f3;
+    flex: 1;
+  }
+  .tab div:last-child {
+    border: none;
+  }
+  .intro-wrap {
+    background: #fff;
+    padding: 30px;
+    box-shadow: 1px 2px 10px #dadada;
+    margin-bottom: 40px;
+  }
+  .head-back {
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, rgb(70,58,243), #4488FF);
+    transform: skewY(8deg);
+    content: "";
+    overflow: visible;
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    left: 0;
+    height: 35%;
+  }
+  .main {
+    /*position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;*/
+    position: relative;
+    overflow: hidden;
+  }
+  .header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 96px;
+    color: white;
+  }
+  .app-name-wrap {
+    padding-top: 28px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .platform-icon-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .platform-icon {
+    width: 30px;
+    height: 30px;
+    display: none;
+  }
+  .app-name {
+    font-size: 32px;
+    /*color: rgb(102, 102, 102);*/
+    font-weight: 700;
+  }
+  .app-info-wrap {
+    margin-top: 10px;
+    padding: 10px 16px 0 16px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    /*color: rgb(102, 102, 102);*/
+    font-weight: 200;
+  }
+  .icon-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding-bottom: 10px;
+  }
+  .icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 22px;
+    /*box-shadow: 0 2px 4px 0 rgba(153,172,204,.47), 0 2px 10px 0 rgba(140,140,140,.27);*/
+    /*-webkit-box-shadow: 0 2px 4px 0 rgba(153,172,204,.47), 0 2px 10px 0 rgba(140,140,140,.27);*/
+  }
+  .password-wrap {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  .pwd-input {
+    width: 160px;
+    border: 1px solid #ECEEF1;
+    background-color: rgba(68, 136, 255, 0.02);
+    border-radius: 3px;
+    color: rgb(104, 114, 140);
+    padding: 0 10px;
+    font-size: 12px;
+    outline: none;
+    height: 30px;
+    text-align: center;
+    -webkit-appearance:none;
+    -webkit-rtl-ordering:logical;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-border-image:none;
+  }
+  .pwd-input:hover {
+    border: 1px solid rgba(68, 136, 255, 0.6);
+    box-shadow: 0 0 3px 0 rgba(68, 136, 255, 0.49);
+    outline: none;
+  }
+  input::-webkit-input-placeholder{
+    color: rgba(104, 114, 140, 0.3);
+  }
+  input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color: rgba(104, 114, 140, 0.3);
+  }
+  input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color: rgba(104, 114, 140, 0.3);
+  }
+  input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color: rgba(104, 114, 140, 0.3);
+  }
+  .download-btn-wrap {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+  .download-btn {
+    min-width: 180px;
+    /*height: 46px;*/
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+    /*-webkit-box-shadow: 0 2px 4px 0 rgba(153, 172, 204, 0.47);
+    box-shadow: 0 2px 4px 0 rgba(153, 172, 204, 0.47);*/
+    background-color: #2196F3;
+    font-size: 14px;
+  }
+  .downloading-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    display: none;
+  }
+  .qrcode-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+  .qrcode-tip {
+    padding-top: 6px;
+    font-size: 14px;
+    color: rgba(104, 114, 140, 0.5);
+    word-wrap: break-word;
+  }
+  .qrcode-img {
+    width: 140px;
+    height: 140px;
+  }
+  .window-wrap {
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    display: none;
+  }
+  .window-wrap.active {
+    display: flex;
+  }
+  .window-text-wrap {
+    padding: 4px 18px;
+    color: rgb(104, 114, 140);
+    font-size: 15px;
+    line-height: 24px;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 0;
+    -webkit-box-orient: vertical;
+  }
+  .history-list {
+    width: 100%;
+    /*width: 320px;*/
+    background-color: white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: solid 1px #ECEEF1;
+  }
+  .history-header {
+    height: 40px;
+    background-color: #FBFCFE;
+    -webkit-box-shadow: 0 1px 0 0 #ECEEF1;
+    box-shadow: 0 1px 0 0 #ECEEF1;
+    border-radius: 3px 3px 0 0;
+    color: rgba(104, 114, 140, 0.6);
+    font-size: 15px;
+    text-indent: 20px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+  .history-cell {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 18px;
+    cursor: pointer;
+    color: rgb(102, 102, 102);
+    font-weight: 200;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(240, 240, 240, 0.5);
+  }
+  .history-next {
+    display: flex;
+    justify-content: center;
+    padding: 6px 18px;
+    cursor: pointer;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .bottom-wrap {
+    height: 50px;
+    margin-top: 80px;
+    background-color: rgb(45, 49, 60);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bottom-link-wrap {
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 200;
+  }
+  .bottom-link-wrap a {
+    text-decoration: none;
+    color: #ccc;
+  }
+  .cover {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: rgb(34,34,34);
+    color: rgb(220,220,220);
+    padding: 0 40px;
+  }
+  .cover-arrow {
+    width: 46px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .template0-header {
+    position: relative;
+    background-color: rgb(252, 252, 252);
+    border-bottom: solid 1px #eee;
+    width: 100%;
+    height: 96px;
+  }
+  .template0-app-name-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .template0-app-title-wrap {
+    display: flex;
+  }
+  .template0-plat-icon-wrap {
+    background-color: rgb(34,34,34);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-right: 4px;
+  }
+  .template0-plat-icon-wrap img {
+    height: 16px;
+  }
+  .template0-app-info-wrap {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  .value-template-0 {
+    display: none;
+  }
+  .value-template-1 {
+    display: none;
+  }
+
+  .gridad {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+  .gridad-app-info {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gridad-item-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .gridad-item {
+    background-color: rgb(248,248,248);
+    width: 50%;
+    padding-bottom: 50%;
+    position: relative;
+  }
+  .gridad-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .ad-link {
+    color: #999;
+    font-size: 10px;
+    line-height: 24px;
+  }
+  .mark {
+    position: fixed;
+    background:#8a8a8a;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 6px #868080;
+    right: 30px;
+  }
+  </style>
+
+  <!-- #googlead#-->
+
+</head>
+<body>
+  <div id="gridad" class="gridad">
+    <div class="gridad-app-info">
+      <div>
+        <div style="display: flex;justify-content: center;">
+          <img class="value-app-icon" style="width: 74px; height: 74px; border-radius: 12px;"></img>
+        </div>
+        <div style="text-align: center; color: #666; padding-top: 16px; font-size: 14px;">
+          正在安装，请按 Home 键在桌面查看
+        </div>
+        <div id="profile-guide" style="text-align: center; color: #48f; padding-top: 8px; font-size: 14px; display: none;">
+          <a style="color: #48f;" href="https://fei.cn/install_guide.html">如何信任苹果证书？</a>
+        </div>
+      </div>
+
+    </div>
+ <div class="button">
+    <div class="text">button</div>/*文字层*/
+    <div class="gradual" ></div>/*渐变层*/
+</div>
+    <div class="gridad-item-wrap">
+      <div class="gridad-item">
+        <a href="#adlink1#">
+          <img class="gridad-img" src="#adimage1#">
+        </a>
+      </div>
+      <div class="gridad-item">
+        <a href="#adlink2#">
+          <img class="gridad-img" src="#adimage2#">
+        </a>
+      </div>
+      <div class="gridad-item">
+        <a href="#adlink3#">
+          <img class="gridad-img" src="#adimage3#">
+        </a>
+      </div>
+      <div class="gridad-item">
+        <a href="#adlink4#">
+          <img class="gridad-img" src="#adimage4#">
+        </a>
+      </div>
+    </div>
+
+    <div class="ad-link">
+      &nbsp;以上赞助广告，请自行甄别真实性
+    </div>
+  </div>
+
+  <div id="app">
+
+    <div class="cover">
+      <div>
+        <p style="text-align: center;">点击右上角，选择“在浏览器中打开”</p>
+      </div>
+      <img class="cover-arrow" src="http://static.fei.cn/i/image/safari_open_arrow.png">
+    </div>
+
+    <div class="main">
+
+      <div class="template0 value-template-0">
+
+        <div class="template0-header">
+          <div class="template0-app-name-wrap">
+            <div class="template0-app-title-wrap">
+              <div class="template0-plat-icon-wrap">
+                <img class="platform-icon value-platform-ios" src="http://static.fei.cn/i/image/ios.svg">
+                <img class="platform-icon value-platform-android" src="http://static.fei.cn/i/image/android.svg">
+              </div>
+              <span class="template0-app-name">
+                <span class="value-app-name"></span>
+              </span>
+              <div class="template0-plat-icon-wrap" style="opacity: 0;">
+                <img class="platform-icon value-platform-ios" src="http://static.fei.cn/i/image/ios.svg">
+                <img class="platform-icon value-platform-android" src="http://static.fei.cn/i/image/android.svg">
+              </div>
+            </div>
+          </div>
+          <div class="template0-app-info-wrap">
+            <div>
+              <span><span class="value-app-version"></span></span>
+              <span class="split">/</span>
+              <span><span class="value-app-size"></span> M</span>
+            </div>
+            <span>更新于 <span class="value-app-create_at"</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="value-template-1">
+        <div class="head-back"></div>
+        <div style="height: 96px;">
+          <div class="header">
+            <div class="app-info-wrap">
+              <div>
+                <span><span class="value-app-version"></span></span>
+                <span class="split">/</span>
+                <span><span class="value-app-size"></span> M</span>
+              </div>
+              <span>更新于 <span class="value-app-create_at"></span></span>
+            </div>
+
+            <div class="app-name-wrap">
+              <div class="platform-icon-wrap">
+                <img class="platform-icon value-platform-ios" src="http://static.fei.cn/i/image/ios.svg">
+                <img class="platform-icon value-platform-android" src="http://static.fei.cn/i/image/android.svg">
+              </div>
+              <p class="app-name"><span class="value-app-name"></span></p>
+              <div style="opacity: 0;">
+                <img class="platform-icon value-platform-ios" src="http://static.fei.cn/i/image/ios.svg">
+                <img class="platform-icon value-platform-android" src="http://static.fei.cn/i/image/android.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="top-wrap">
+        <div class="icon-wrap">
+          <img class="icon value-app-icon" onerror="src='http://static.fei.cn/i/image/logo-m.png'"></img>
+        </div>
+          <div class="qrcode-wrap">
+            <div style="position: relative;">
+              <div id="qrcode" class="qrcode-img"></div>
+              <div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center;">
+                  <img style="width: 20px; height: 20px;" class="value-app-icon" onerror="src='http://static.fei.cn/i/image/logo-m.png'"></img>
+              </div>
+            </div>
+            <p class="qrcode-tip">扫描二维码下载应用</p>
+          </div>
+        <div class="password-wrap">
+          <input class="pwd-input value-password" type="password" placeholder="下载密码">
+        </div>
+
+        <div class="download-btn-wrap">
+          <div class="download-btn">点击安装</div>
+
+        </div>
+
+          <div class="downloading-wrap">
+            <img id="downloading-flower" style="width: 30px; height: 30px;" src="http://static.fei.cn/i/image/loading.svg">
+            <span id="downloading-tip" style="color: #48f; font-size: 15px; display: none;">正在安装，请按 Home 键在桌面查看</span>
+          </div>
+
+
+      </div>
+
+
+
+      <div class="intro-wrap">
+        <div class="tab">
+          <div class="active">
+            应用简介
+          </div>
+          <div>
+            更新内容
+          </div>
+          <div>
+            历史版本
+          </div>
+        </div>
+        <div class="window-wrap active show-app-intro">
+          <div class="history-list">
+            <div class="history-header">
+              应用简介
+            </div>
+            <p class="window-text-wrap"><span class="value-app-app_intro"></span></p>
+          </div>
+        </div>
+
+        <div class="window-wrap show-update-intro">
+          <div class="history-list">
+            <div class="history-header">
+              更新内容
+            </div>
+            <p class="window-text-wrap"><span class="value-app-update_intro"></span></p>
+          </div>
+        </div>
+
+        <div class="window-wrap">
+          <div class="history-list">
+            <div class="history-header">
+              历史版本
+            </div>
+            <div class="value-history"></div>
+            <div class="history-next" style="color: 4488FF"><span class="value-history-next"></span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div class="bottom-wrap">
+        <div class="bottom-link-wrap">
+          <a href="https://www.fei.cn/">飞网</a>
+          <span class="split">|</span>
+          <a href="https://www.fei.cn/examine.html">审核规则</a>
+          <span class="split">|</span>
+          <a class="link-report">举报</a>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+  <div class="mark link-report">
+    举报
+  </div>
+</body>
+
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+  <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdn.bootcss.com/moment.js/2.24.0/locale/zh-cn.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var qrcode = $("#qrcode").qrcode({
+      render: "canvas",
+      text: location.href,
+      width: "140",
+      height: "140",
+      background: "#ffffff",
+      foreground: "#000000"
+    });
+  });
+</script>
+
+<script>
+  // #location.href#
+
+  var app = {
+    mainurl: '',
+    template: '#',
+    app_id: '#',
+    app: {
+    },
+    isPhone: false,
+    isWechat: false,
+    isQQ: false,
+    isAlipay: false,
+    page: 1,
+    list: [],
+    allLoad: false,
+    password: ''
+  }
+
+  app.mainurl = 'https://www.fei.cn/api/'
+  if (location.href.indexOf('localhost') > 0) {
+      app.mainurl = 'http://localhost:5000/'
+  }
+
+  if (/iPad|iPhone|Android/.test(navigator.userAgent)) {
+    app.isPhone = true
+  }
+
+  if (/MicroMessenger/.test(navigator.userAgent)) {
+    app.isWechat = true
+  }
+
+  if (/QBWebViewType/.test(navigator.userAgent)) {
+    app.isQQ = true
+  }
+
+  if (app.isWechat || app.isQQ) {
+    $('.cover').css('display', 'flex');
+  }
+
+  if (/Alipay/.test(navigator.userAgent)) {
+    app.isAlipay = true
+  }
+
+  // requestAppInfo()
+
+  app.page = 1
+  requestAppList()
+
+  $('.download-btn').click(function() {
+    onDownload()
+  })
+
+  $('.tab div').click(function () {
+    let idx = $(this).index()
+    $('.window-wrap.active').removeClass('active')
+    $('.tab .active').removeClass('active')
+    $('.window-wrap').eq(idx).addClass('active')
+    $(this).addClass('active')
+  })
+
+  if (app.template == 0) {
+    $('.value-template-0').show()
+  } else if (app.template == 1) {
+    $('.value-template-1').show()
+  }
+
+  $('.history-next').click(function() {
+    onRequestList()
+  })
+
+  $('.link-report').click(function() {
+    var href = 'https://www.fei.cn/report.html?id=' + app.app_id
+    location.href = href
+  })
+
+  function timeFormat (time) {
+    return moment(time, "YYYY-MM-DD hh:mm:ss").fromNow();
+  }
+
+  function onRequestList () {
+    if (app.allLoad) {
+      return
+    }
+
+    app.page ++;
+    requestAppList()
+  }
+
+  function toast (msg){
+    var m = document.createElement('div')
+    m.innerHTML = '<span style="background-color:black;opacity:0.8;color:white;padding:18px 26px; border-radius: 4px; font-size: 16px;">' + msg + '</span>'
+    m.style.cssText="z-index: 1000; position:absolute;top:0;left:0;right:0;bottom:0;display:flex;justify-content:center;align-items:center;"
+    document.body.appendChild(m)
+    setTimeout(function() {
+        var d = 0.1;
+        m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in'
+        m.style.opacity = '0'
+        setTimeout(function() { document.body.removeChild(m) }, d * 1000)
+    }, 1000)
+  }
+
+  function downloading() {
+    // if (#show_gridad#) {
+    //   $('#gridad').css('display', 'flex')
+    //   $('#app').hide()
+    // } else {
+    //   $('.download-btn-wrap').hide();
+    //   $('.downloading-wrap').css('display', 'flex');
+    //   setTimeout(function() {
+    //     $('#downloading-flower').hide()
+    //     $('#downloading-tip').show()
+    //   }, 2000)
+    // }
+  }
+
+  function onDownload () {
+    if (!app.isPhone) {
+      // 部分安卓设备有误判
+      // toast("请使用手机打开本网页")
+      // return
+    }
+
+    var password = $('.value-password').val()
+
+    if (app.app.need_password && password.length == 0)  {
+      toast("请输入密码")
+      return
+    }
+
+    if (/\sQQ|TIM|MicroMessenger/.test(window.navigator.userAgent)) {
+      toast("请使用其它浏览器打开本网页")
+      return
+    }
+
+    axios.post(app.mainurl + 'public/app/downloadurl', {
+      id: app.app_id,
+      password: password
+    })
+    .then(function(response) {
+      if (response && response.status === 200) {
+        if (response.data.code === 0) {
+          var data = response.data.data
+          // console.log(data)
+          if (data.url) {
+            location.href = data.url
+          }
+          downloading()
+        } else {
+          toast(response.data.message)
+        }
+      } else {
+        toast('网络异常')
+      }
+    })
+  }
+
+  function onSelectVersion (id) {
+    if (/\sQQ|TIM|MicroMessenger/.test(window.navigator.userAgent)) {
+      toast("请使用其它浏览器打开本网页")
+      return
+    }
+
+    if (/http.*\/app\/(.*)/.exec(location.href)) {
+      var url = /http.*\/app\//.exec(location.href)
+      location.href = url[0] + id
+    }
+  }
+
+  function requestAppInfo () {
+    axios.post(app.mainurl + 'public/app/info', {
+      id: app.app_id
+    })
+    .then(function(response) {
+      if (response && response.status === 200) {
+        if (response.data.code === 0) {
+          app.app = response.data.data
+          $('.value-app-name').text(app.app.name)
+          $('.value-app-version').text(app.app.version)
+          $('.value-app-size').text(app.app.size)
+          $('.value-app-create_at').text(timeFormat(app.app.create_at))
+          if (app.app.platform == 'ios') {
+            $('.value-platform-ios').css('display', 'inline-block')
+            $('#profile-guide').show()
+          } else {
+            $('.value-platform-android').css('display', 'inline-block')
+          }
+          $('.value-app-icon').attr('src', app.app.icon)
+          $('.value-app-app_intro').text(app.app.app_intro)
+          $('.value-app-update_intro').text(app.app.update_intro)
+          if (!app.app.app_intro || app.app.app_intro.length == 0) {
+            $('.show-app-intro').hide()
+          }
+          if (!app.app.update_intro || app.app.update_intro.length == 0) {
+            $('.show-update-intro').hide()
+          }
+          if (!app.app.need_password) {
+            $('.password-wrap').hide()
+          }
+        } else {
+          toast(response.data.message)
+        }
+      } else {
+        toast('网络异常')
+      }
+    })
+  }
+
+  function requestAppList () {
+    var size = 10
+
+    axios.post(app.mainurl + 'public/app/list', {
+      id: app.app_id,
+      page: app.page,
+      size: size
+    })
+    .then(function(response) {
+      if (response && response.status === 200) {
+        app.products = response.data.data.list
+        app.mch = response.data.data.mch
+        if (response.data.code === 0) {
+          var list = response.data.data
+          // console.log(list)
+
+          for (var i = 0; i < list.length; i++) {
+            var item = list[i]
+            $('.value-history').after('<div class="history-cell" id="' + item.record_id + '"><span>' + item.name + '</span><span>' + item.create_at + '</span></div>')
+
+            $('.history-cell').click(function(){
+              var id = $(this).attr('id')
+              onSelectVersion(id)
+            })
+          }
+
+          $('.value-history-next').text('下一页')
+          if (list.length < size || list.length == 0) {
+            app.allLoad = true
+            $('.value-history-next').text('已全部加载')
+          }
+
+          app.list = app.list.concat(list)
+        } else {
+          toast(response.data.message)
+        }
+      } else {
+        toast('网络异常')
+      }
+    })
+  }
+
+  </script>
+</html>
